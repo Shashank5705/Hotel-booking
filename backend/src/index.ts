@@ -17,6 +17,7 @@ cloudinary.config({
   api_secret: process.env.CLOUDINARY_API_SECRET,
 });
 
+console.log("Connecting to MongoDB:", process.env.MONGODB_CONNECTION_STRING);
 mongoose.connect(process.env.MONGODB_CONNECTION_STRING as string);
 
 const app = express();

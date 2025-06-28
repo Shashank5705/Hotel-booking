@@ -5,6 +5,9 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const jsonwebtoken_1 = __importDefault(require("jsonwebtoken"));
 const verifyToken = (req, res, next) => {
+    if (req.path === "/" && !req.cookies["auth_token"]) {
+        return next(); // Allow the request to proceed without authentication
+    }
     const token = req.cookies["auth_token"];
     if (!token) {
         return res.status(401).json({ message: "unauthorized" });

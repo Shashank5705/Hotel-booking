@@ -11,7 +11,7 @@ const Header = () => {
     <div className="bg-amber-400 py-6 px-4">
         <div className="container mx-auto flex justify-between">
             <span className="flex gap-2 text-3xl text-white font-bold items-center">
-                <Link to="/">bookeando </Link>
+                <Link to="/"> RETREATS </Link>
                 <img src="favicon.png" className="w-12" />
             </span>
             <span className="flex space-x-2">

@@ -246,3 +246,4 @@ export const fetchMyBookings = async (): Promise<HotelType[]> => {
 
   return response.json();
 };
+console.log("API base URL:", API_BASE_URL);

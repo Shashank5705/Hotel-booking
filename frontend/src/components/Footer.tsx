@@ -4,9 +4,9 @@ const Footer = () => {
         <div className="container mx-auto flex flex-col md:flex-row justify-between items-center text-white">
             <div className="flex flex-col mf:flex-row md:items-center">
               <span className="text-sm  font-bold tracking-tight">
-                  bookeando.com 🛫</span>
+                  shivaretreats.com 🛫</span>
               <span className="block mt-1 md:inline md:ml-4 text-sm">
-                  made with 🤍 by ssanjua </span>
+                   </span>
             </div>
             <div className="text-sm flex gap-4">
                 <span>Privacy Policy</span>

@@ -7,6 +7,8 @@ const Home = () => {
     apiClient.fetchHotels()
   );
 
+  console.log("Hotels data:", hotels);
+
   const topRowHotels = hotels?.slice(0, 2) || [];
   const bottomRowHotels = hotels?.slice(2, 8) || [];
   const bestRowHotels = hotels?.slice(8,10) || [];

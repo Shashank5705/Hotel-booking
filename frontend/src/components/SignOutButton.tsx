@@ -8,7 +8,9 @@ const SignOutButton = () => {
     const { showToast } = useAppContext()
     const mutation = useMutation(apiClient.signOut, {
         onSuccess: async () => {
-            await queryClient.invalidateQueries("validateToken")
+            // Instead of invalidating the query which causes a refetch,
+            // directly set the query data to indicate the user is not logged in
+            queryClient.setQueryData("validateToken", null);
             showToast({ message: "Signed out!", type: "SUCCESS" })
         },
         onError: (error: Error) => {

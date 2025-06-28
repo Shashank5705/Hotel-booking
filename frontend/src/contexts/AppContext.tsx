@@ -28,8 +28,12 @@ export const AppContextProvider = ({
   }) => {
     const [toast, setToast] = useState<ToastMessage | undefined>(undefined);
   
-    const { isError } = useQuery("validateToken", apiClient.validateToken, {
+    const { isError, data } = useQuery("validateToken", apiClient.validateToken, {
         retry: false,
+        // Don't show errors in the console for authentication failures
+        onError: () => {
+            // This is expected when not logged in, so we silently handle it
+        }
       });
     
     return (
@@ -37,7 +41,7 @@ export const AppContextProvider = ({
             showToast: (toastMessage) => {
                 setToast(toastMessage);
             },
-            isLoggedIn: !isError,
+            isLoggedIn: !isError && !!data,
             stripePromise
         }}
         >
